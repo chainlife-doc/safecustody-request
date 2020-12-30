@@ -44,15 +44,7 @@ func (r *Request) request(method Method, url string, body []byte) (resp *http.Re
 	for k, v := range r.header {
 		req.Header.Set(k, v)
 	}
-
-	resp, err = r.HttpC.Do(req)
-	if err != nil {
-		return
-	}
-
-	_ = resp.Body.Close()
-
-	return
+	return r.HttpC.Do(req)
 }
 
 func Http() *Request {
