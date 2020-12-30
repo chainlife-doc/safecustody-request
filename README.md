@@ -14,7 +14,7 @@ fmt.Println(string(body))
 ```
 #### GET
 ```go
-body,err:=req.Http().Get(url, nil)
+body,err:=req.Http().Get(url)
 fmt.Println(string(body))
 ```
 #### 设置请求头
