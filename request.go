@@ -16,7 +16,11 @@ func (r *Request) Post(url string, param interface{}) (resp *Response, err error
 	if err != nil {
 		return
 	}
-	res, err := r.request(PostMethod, url, body)
+	return r.PostByte(url, body)
+}
+
+func (r *Request) PostByte(url string, param []byte) (resp *Response, err error) {
+	res, err := r.request(PostMethod, url, param)
 	if err != nil {
 		return
 	}
